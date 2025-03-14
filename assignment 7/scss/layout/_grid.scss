@@ -1,0 +1,49 @@
+// Grid System
+.grid {
+  @include grid(1, $grid-gap);
+  
+  @include respond-to('medium') {
+    @include grid(2, $grid-gap);
+  }
+  
+  @include respond-to('large') {
+    @include grid(3, $grid-gap);
+  }
+}
+
+// Destination Grid
+.destination-grid {
+  @include grid(1, $grid-gap);
+  margin: $spacing-unit * 4 0;
+  
+  @include respond-to('medium') {
+    @include grid(2, $grid-gap);
+  }
+  
+  @include respond-to('large') {
+    @include grid(4, $grid-gap);
+  }
+}
+
+// Features Grid
+.features-container {
+  @include grid(1, $grid-gap);
+  
+  @include respond-to('medium') {
+    @include grid(3, $grid-gap);
+  }
+}
+
+// Destinations Page Grid
+.destinations-grid {
+  @include grid(1, $grid-gap * 2);
+  padding: $spacing-unit * 4;
+  
+  @include respond-to('medium') {
+    @include grid(2, $grid-gap * 2);
+  }
+  
+  @include respond-to('large') {
+    @include grid(3, $grid-gap * 2);
+  }
+}

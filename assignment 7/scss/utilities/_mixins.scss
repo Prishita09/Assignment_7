@@ -1,0 +1,62 @@
+// Flexbox mixin
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Grid mixin
+@mixin grid($columns: 1, $gap: $grid-gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Media query mixin
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+// Button mixin
+@mixin button($bg-color: $primary-color, $text-color: white) {
+  display: inline-block;
+  padding: $spacing-unit $spacing-unit * 2;
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: all $transition-speed $transition-timing;
+  
+  &:hover {
+    background-color: darken($bg-color, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+// Card shadow mixin
+@mixin card-shadow($depth: 1) {
+  $shadow-color: rgba(0, 0, 0, 0.1);
+  
+  @if $depth == 1 {
+    box-shadow: 0 2px 4px $shadow-color;
+  } @else if $depth == 2 {
+    box-shadow: 0 4px 8px $shadow-color;
+  } @else {
+    box-shadow: 0 8px 16px $shadow-color;
+  }
+}
+
+// Typography mixin
+@mixin heading($size, $weight: bold) {
+  font-family: $font-secondary;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $heading-line-height;
+  margin-bottom: $spacing-unit * 2;
+}

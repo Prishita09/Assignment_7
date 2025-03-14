@@ -1,0 +1,25 @@
+.cta-button {
+  @extend %button-base;
+  @include button($accent-color, $light-color);
+  padding: $spacing-unit * 1.5 $spacing-unit * 3;
+  font-size: rem(18px);
+}
+
+.book-btn {
+  @extend %button-base;
+  @include button($secondary-color, $light-color);
+  padding: $spacing-unit $spacing-unit * 2;
+}
+
+.filter-btn {
+  @extend %button-base;
+  @include button(transparent, $text-color);
+  border: 1px solid $primary-color;
+  margin: 0 $spacing-unit;
+  
+  &.active,
+  &:hover {
+    background-color: $primary-color;
+    color: $light-color;
+  }
+}

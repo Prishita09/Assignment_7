@@ -1,0 +1,58 @@
+.destination-card {
+  @extend %card;
+  @extend %hover-lift;
+  overflow: hidden;
+  
+  img {
+    @extend %image-cover;
+    height: 200px;
+    border-radius: $border-radius $border-radius 0 0;
+  }
+  
+  h3 {
+    @include heading(rem(20px));
+    margin: $spacing-unit * 2 0 $spacing-unit;
+  }
+  
+  p {
+    color: rgba($text-color, 0.8);
+    margin-bottom: $spacing-unit * 2;
+  }
+}
+
+.feature {
+  @extend %card;
+  text-align: center;
+  padding: $spacing-unit * 3;
+  
+  .feature-icon {
+    font-size: rem(32px);
+    color: $secondary-color;
+    margin-bottom: $spacing-unit * 2;
+  }
+  
+  h3 {
+    @include heading(rem(18px));
+    margin-bottom: $spacing-unit;
+  }
+  
+  p {
+    color: rgba($text-color, 0.8);
+  }
+}
+
+.tip-card {
+  @extend %card;
+  padding: $spacing-unit * 3;
+  background-color: tint($primary-color, 90%);
+  
+  h3 {
+    @include heading(rem(18px));
+    color: $primary-color;
+    margin-bottom: $spacing-unit;
+  }
+  
+  p {
+    color: rgba($text-color, 0.8);
+  }
+}

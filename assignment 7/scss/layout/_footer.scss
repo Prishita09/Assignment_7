@@ -1,0 +1,43 @@
+.footer {
+  background-color: $dark-color;
+  color: $light-color;
+  padding: $section-spacing 0;
+  
+  .footer-content {
+    @extend %container;
+    @include grid(1, $grid-gap * 2);
+    
+    @include respond-to('medium') {
+      @include grid(3, $grid-gap * 2);
+    }
+  }
+  
+  .footer-section {
+    h4 {
+      @include heading(rem(20px));
+      color: $light-color;
+      margin-bottom: $spacing-unit * 2;
+    }
+    
+    p {
+      margin-bottom: $spacing-unit;
+      opacity: 0.8;
+    }
+  }
+  
+  .social-links {
+    @include flex(row, flex-start, center);
+    gap: $spacing-unit * 2;
+    
+    .social-icon {
+      color: $light-color;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity $transition-speed $transition-timing;
+      
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

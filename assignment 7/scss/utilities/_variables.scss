@@ -1,0 +1,57 @@
+// Colors
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$accent-color: #e74c3c;
+$text-color: #333;
+$light-color: #ecf0f1;
+$dark-color: #2c3e50;
+
+// Typography
+$font-primary: 'Poppins', sans-serif;
+$font-secondary: 'Playfair Display', serif;
+$base-font-size: 16px;
+$heading-line-height: 1.2;
+
+// Spacing
+$spacing-unit: 8px;
+$container-padding: $spacing-unit * 2;
+$section-spacing: $spacing-unit * 8;
+
+// Breakpoints
+$breakpoints: (
+  'small': 576px,
+  'medium': 768px,
+  'large': 992px,
+  'xlarge': 1200px
+);
+
+// Grid
+$grid-columns: 12;
+$grid-gap: $spacing-unit * 2;
+
+// Border radius
+$border-radius: 4px;
+$border-radius-lg: 8px;
+
+// Transitions
+$transition-speed: 0.3s;
+$transition-timing: ease-in-out;
+
+// Z-index layers
+$z-layers: (
+  'modal': 1000,
+  'overlay': 900,
+  'dropdown': 800,
+  'header': 700,
+  'footer': 600
+);
+
+// Custom properties (CSS variables)
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --accent-color: #{$accent-color};
+  --text-color: #{$text-color};
+  --light-color: #{$light-color};
+  --dark-color: #{$dark-color};
+}

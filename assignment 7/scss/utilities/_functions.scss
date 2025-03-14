@@ -1,0 +1,39 @@
+@use "sass:math";
+
+// Convert px to rem
+@function rem($pixels) {
+  @return math.div($pixels, 16px) * 1rem;
+}
+
+// Get z-index value
+@function z($layer) {
+  @if map-has-key($z-layers, $layer) {
+    @return map-get($z-layers, $layer);
+  }
+  @warn 'No z-index found for layer: #{$layer}';
+  @return null;
+}
+
+// Calculate fluid font size
+@function fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $unit1: unit($min-vw);
+  $unit2: unit($max-vw);
+  $unit3: unit($min-font-size);
+  $unit4: unit($max-font-size);
+  
+  @if $unit1 == $unit2 and $unit3 == $unit4 {
+    $slope: math.div($max-font-size - $min-font-size, $max-vw - $min-vw);
+    $base-font-size: $min-font-size - $slope * $min-vw;
+    
+    @return clamp(#{$min-font-size}, #{$base-font-size} + #{$slope * 100}vw, #{$max-font-size});
+  }
+}
+
+// Color manipulation
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
